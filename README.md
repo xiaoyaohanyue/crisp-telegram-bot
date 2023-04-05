@@ -45,7 +45,7 @@ Wants = network.target
 
 [Service]
 WorkingDirectory = /root/crispbot/
-ExecStart = /root/crispbot/Crisp_Telegram_bot
+ExecStart = /root/crispbot/crisp_tg_bot
 Restart = on-abnormal
 RestartSec = 5s
 KillMode = mixed
