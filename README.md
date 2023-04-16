@@ -9,11 +9,13 @@
 ## config.yaml
 
 ```
+
 debug: true
 redis:
   host: localhost:6379
   db: 0
   password: ''
+  cacheTime: 24
 crisp:
   identifier: 049sk12f-8349-8274-9d91-f21jv91kafa7 #的 Crisp Marketplace 插件 ID
   key: 078f2106a5d89179gkqn38e5e82e3c7j30ajfkelqnvd874fb2378573499ff505 # 你的 Crisp Marketplace 插件秘钥
