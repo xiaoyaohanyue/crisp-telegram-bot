@@ -21,6 +21,7 @@ func GetConfig() *viper.Viper {
 	c.SetDefault("redis.host", "localhost:6379")
 	c.SetDefault("redis.db", 0)
 	c.SetDefault("redis.password", "")
+	c.SetDefault("redis.cacheTime", 12)
 
 	c.SetDefault("crisp.identifier", "")
 	c.SetDefault("crisp.key", "")

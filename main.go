@@ -103,7 +103,7 @@ func sendMsgToAdminsHtml(text string, WebsiteID string, SessionID string) {
 		redisClient.Set(strconv.Itoa(sent.MessageID), &CrispMessageInfo{
 			WebsiteID,
 			SessionID,
-		}, 12*time.Hour)
+		}, config.GetInt("redis.cacheTime")*time.Hour)
 	}
 }
 
@@ -271,7 +271,7 @@ func main() {
 
 		switch update.Message.Command() {
 		case "start":
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Blinkload Telegram 客服助手")
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "极客Crisp客服助手")
 			msg.ParseMode = "Markdown"
 			bot.Send(msg)
 		}
