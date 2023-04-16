@@ -91,7 +91,7 @@ func sendMsgToAdmins(text string, WebsiteID string, SessionID string) {
 		redisClient.Set(strconv.Itoa(sent.MessageID), &CrispMessageInfo{
 			WebsiteID,
 			SessionID,
-		}, 12*time.Hour)
+		}, time.Duration(config.GetInt("redis.cacheTime"))*time.Hour)
 	}
 }
 func sendMsgToAdminsHtml(text string, WebsiteID string, SessionID string) {
@@ -103,7 +103,7 @@ func sendMsgToAdminsHtml(text string, WebsiteID string, SessionID string) {
 		redisClient.Set(strconv.Itoa(sent.MessageID), &CrispMessageInfo{
 			WebsiteID,
 			SessionID,
-		}, config.GetInt("redis.cacheTime")*time.Hour)
+		}, time.Duration(config.GetInt("redis.cacheTime"))*time.Hour)
 	}
 }
 
